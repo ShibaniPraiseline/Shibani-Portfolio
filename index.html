@@ -120,23 +120,10 @@ nav{
   overflow:hidden;
   flex-shrink:0;
   border:12px solid #fff;
-
   box-shadow:
     0 0 0 50px #eff6ff,
     0 30px 60px rgba(37,99,235,0.25);
 }
-
-.hero-avatar img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-
-  /* Adjust photo position */
-  object-position:center 5%;
-
-  display:block;
-}
-
 .hero-avatar img{
   width:100%;
   height:100%;
@@ -150,32 +137,51 @@ section{width:100%;padding:5rem 8vw}
 section:nth-child(even){background:var(--white)}
 .section-label{
   display:inline-block;
-  font-size:0.8rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:2px;
-  color:var(--accent);margin-bottom:0.75rem;
+  font-size:1rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  color:var(--accent);
+  margin-bottom:0.75rem;
 }
 .section-title{
   font-family:'Sora',sans-serif;
-  font-size:clamp(1.8rem,3vw,2.6rem);
-  font-weight:800;color:var(--navy);
-  letter-spacing:-1px;margin-bottom:2.5rem;
+  font-size:clamp(2.5rem,4vw,4rem);
+  font-weight:800;
+  color:var(--navy);
+  letter-spacing:-1px;
+  margin-bottom:2.5rem;
 }
 .divider{border:none;border-top:1px solid var(--border)}
 
 /* ── ABOUT ── */
 .about-grid{display:grid;grid-template-columns:2fr 1fr;gap:2rem}
 .about-intro{
-  background:var(--white);border:1px solid var(--border);
-  border-radius:var(--r);padding:2rem;
-  font-size:1.05rem;color:var(--slate);line-height:1.85;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:2rem;
+  font-size:1.25rem;
+  color:var(--slate);
+  line-height:2;
 }
 .about-side{display:flex;flex-direction:column;gap:1.25rem}
 .about-card{
   background:var(--white);border:1px solid var(--border);
   border-radius:var(--r);padding:1.5rem;
 }
-.about-card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem}
-.about-card p,.about-card li{font-size:0.95rem;color:var(--slate);line-height:1.7}
+.about-card h3{
+  font-size:1.3rem;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:1rem;
+}
+.about-card p,
+.about-card li{
+  font-size:1.1rem;
+  color:var(--slate);
+  line-height:1.9;
+}
 .about-card ul{padding-left:1.25rem}
 .about-card ul li{margin-bottom:6px}
 
@@ -186,15 +192,22 @@ section:nth-child(even){background:var(--white)}
   border-radius:var(--r);padding:1.75rem;
 }
 .skill-group-title{
-  font-size:0.8rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:1.5px;
-  color:var(--accent);margin-bottom:1rem;
+  font-size:1.05rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:var(--accent);
+  margin-bottom:1rem;
 }
 .skill-tags{display:flex;flex-wrap:wrap;gap:8px}
 .skill-tag{
-  background:var(--bg);border:1px solid var(--border);
-  border-radius:100px;padding:6px 16px;
-  font-size:0.9rem;color:var(--slate);font-weight:500;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:100px;
+  padding:10px 20px;
+  font-size:1.05rem;
+  color:var(--slate);
+  font-weight:600;
   transition:all .2s;
 }
 .skill-tag:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
@@ -342,10 +355,7 @@ footer{
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
   .hero{flex-direction:column-reverse;text-align:center;padding:3rem 6vw}
-  .hero-avatar{
-  width:240px;
-  height:240px;
-}
+  .hero-avatar{width:240px;height:240px;}
   .hero-desc{max-width:100%}
   .hero-btns,.hero-roles{justify-content:center}
   .hero-stats{justify-content:center}
@@ -392,8 +402,8 @@ footer{
     </div>
   </div>
   <div class="hero-avatar">
-  <img src="images/shibani.jpg" alt="M. Shibani">
-</div>
+    <img src="images/shibani.jpg" alt="M. Shibani">
+  </div>
 </div>
 
 <!-- ABOUT -->
@@ -527,6 +537,11 @@ footer{
         <li>Dashboard with request history and analytics</li>
         <li>Secure REST API design with protected endpoints</li>
       </ul>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border);">
+        <a href="https://gate-x-three.vercel.app/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:0.9rem;font-weight:600;color:var(--teal);background:var(--teal-light);border:1px solid #99f6e4;border-radius:100px;padding:7px 16px;text-decoration:none;transition:all .2s;" onmouseover="this.style.background='#ccfbf1'" onmouseout="this.style.background='var(--teal-light)'">🌐 Live Demo</a>
+        <a href="https://gatex-api.onrender.com" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:0.9rem;font-weight:600;color:var(--accent);background:var(--accent-light);border:1px solid #bfdbfe;border-radius:100px;padding:7px 16px;text-decoration:none;transition:all .2s;" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='var(--accent-light)'">⚡ API</a>
+        <a href="https://github.com/ShibaniPraiseline/GateX" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:0.9rem;font-weight:600;color:var(--slate);background:var(--bg);border:1px solid var(--border);border-radius:100px;padding:7px 16px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--slate)'">🐙 GitHub</a>
+      </div>
     </div>
   </div>
 </section>
