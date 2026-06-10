@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>M. Shibani | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0f172a;
+  --slate:#334155;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --bg:#f8fafc;
+  --white:#fff;
+  --accent:#2563eb;
+  --accent-dark:#1d4ed8;
+  --accent-light:#eff6ff;
+  --teal:#0d9488;
+  --teal-light:#f0fdfa;
+  --purple:#7c3aed;
+  --purple-light:#f5f3ff;
+  --r:14px;
+  --rs:8px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--navy);line-height:1.75;font-size:18px}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 8vw;
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;
+}
+.nav-logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.6rem;color:var(--navy);letter-spacing:-0.5px}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2.5rem}
+.nav-links a{text-decoration:none;font-size:1rem;color:var(--muted);font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+
+/* ── HERO ── */
+.hero{
+  width:100%;
+  padding:7rem 8vw 5rem;
+  display:flex;align-items:center;gap:6rem;
+  background:linear-gradient(135deg,#fff 60%,#eff6ff 100%);
+  border-bottom:1px solid var(--border);
+}
+.hero-text{flex:1;min-width:0}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent-light);color:var(--accent);
+  font-size:0.9rem;font-weight:600;
+  padding:6px 16px;border-radius:100px;
+  margin-bottom:1.5rem;
+  border:1px solid #bfdbfe;
+}
+.hero-badge::before{content:"●";font-size:8px;color:#22c55e}
+.hero h1{
+  font-family:'Sora',sans-serif;
+  font-size:clamp(2.8rem,5vw,4.2rem);
+  font-weight:800;line-height:1.1;
+  letter-spacing:-2px;
+  color:var(--navy);
+  margin-bottom:1rem;
+}
+.hero h1 span{color:var(--accent)}
+.hero-roles{
+  display:flex;flex-wrap:wrap;gap:10px;
+  margin-bottom:1.25rem;
+}
+.role-chip{
+  font-size:0.95rem;font-weight:600;
+  padding:5px 16px;border-radius:100px;
+  border:1.5px solid;
+}
+.role-chip.blue{color:var(--accent);border-color:#bfdbfe;background:var(--accent-light)}
+.role-chip.teal{color:var(--teal);border-color:#99f6e4;background:var(--teal-light)}
+.role-chip.purple{color:var(--purple);border-color:#ddd6fe;background:var(--purple-light)}
+.hero-desc{
+  font-size:1.1rem;color:var(--muted);
+  max-width:520px;margin-bottom:2rem;line-height:1.8;
+}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-primary{
+  background:var(--accent);color:#fff;
+  border:none;border-radius:var(--rs);
+  padding:14px 32px;font-size:1rem;font-weight:600;
+  cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:background .2s,transform .15s;
+}
+.btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.btn-outline{
+  background:transparent;color:var(--accent);
+  border:2px solid var(--accent);
+  border-radius:var(--rs);
+  padding:14px 32px;font-size:1rem;font-weight:600;
+  cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all .2s;
+}
+.btn-outline:hover{background:var(--accent-light);transform:translateY(-1px)}
+.hero-stats{
+  display:flex;gap:3rem;
+  padding-top:2rem;
+  border-top:1px solid var(--border);
+}
+.stat-num{font-family:'Sora',sans-serif;font-size:2.2rem;font-weight:800;color:var(--navy);display:block}
+.stat-label{font-size:0.9rem;color:var(--muted);font-weight:500}
+.hero-avatar{
+  width:380px;
+  height:380px;
+  border-radius:50%;
+  overflow:hidden;
+  flex-shrink:0;
+  border:12px solid #fff;
+
+  box-shadow:
+    0 0 0 50px #eff6ff,
+    0 30px 60px rgba(37,99,235,0.25);
+}
+
+.hero-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  /* Adjust photo position */
+  object-position:center 5%;
+
+  display:block;
+}
+
+.hero-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 30%;
+  display:block;
+}
+
+/* ── SECTIONS ── */
+section{width:100%;padding:5rem 8vw}
+section:nth-child(even){background:var(--white)}
+.section-label{
+  display:inline-block;
+  font-size:0.8rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:2px;
+  color:var(--accent);margin-bottom:0.75rem;
+}
+.section-title{
+  font-family:'Sora',sans-serif;
+  font-size:clamp(1.8rem,3vw,2.6rem);
+  font-weight:800;color:var(--navy);
+  letter-spacing:-1px;margin-bottom:2.5rem;
+}
+.divider{border:none;border-top:1px solid var(--border)}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:2fr 1fr;gap:2rem}
+.about-intro{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--r);padding:2rem;
+  font-size:1.05rem;color:var(--slate);line-height:1.85;
+}
+.about-side{display:flex;flex-direction:column;gap:1.25rem}
+.about-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.5rem;
+}
+.about-card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem}
+.about-card p,.about-card li{font-size:0.95rem;color:var(--slate);line-height:1.7}
+.about-card ul{padding-left:1.25rem}
+.about-card ul li{margin-bottom:6px}
+
+/* ── SKILLS ── */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem}
+.skill-group{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.75rem;
+}
+.skill-group-title{
+  font-size:0.8rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:1.5px;
+  color:var(--accent);margin-bottom:1rem;
+}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px}
+.skill-tag{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:100px;padding:6px 16px;
+  font-size:0.9rem;color:var(--slate);font-weight:500;
+  transition:all .2s;
+}
+.skill-tag:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+
+/* ── PROJECTS ── */
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+.project-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--r);padding:2rem;
+  transition:transform .2s,box-shadow .2s;
+  display:flex;flex-direction:column;
+}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.08)}
+.project-card.featured{border-top:3px solid var(--accent)}
+.project-card.second{border-top:3px solid var(--teal)}
+.project-badge{
+  display:inline-block;
+  font-size:0.75rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:1px;
+  padding:4px 12px;border-radius:100px;
+  margin-bottom:1rem;
+}
+.project-badge.blue{color:var(--accent);background:var(--accent-light)}
+.project-badge.teal{color:var(--teal);background:var(--teal-light)}
+.project-card h3{
+  font-family:'Sora',sans-serif;
+  font-size:1.2rem;font-weight:700;
+  color:var(--navy);margin-bottom:0.75rem;
+}
+.project-card p{font-size:0.95rem;color:var(--muted);margin-bottom:1.25rem;line-height:1.75;flex:1}
+.project-stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem}
+.stack-tag{
+  font-size:0.8rem;font-weight:600;
+  padding:4px 12px;border-radius:100px;
+}
+.stack-tag.blue{background:var(--accent-light);color:var(--accent)}
+.stack-tag.teal{background:var(--teal-light);color:var(--teal)}
+.project-highlights{list-style:none;padding:0}
+.project-highlights li{
+  font-size:0.95rem;color:var(--slate);
+  padding:4px 0 4px 20px;position:relative;line-height:1.6;
+}
+.project-highlights li::before{
+  content:"→";position:absolute;left:0;
+  color:var(--accent);font-size:0.85rem;top:5px;
+}
+
+/* ── EXPERIENCE ── */
+.exp-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--r);padding:2rem 2.5rem;
+  display:flex;gap:2rem;align-items:flex-start;
+}
+.exp-logo{
+  width:56px;height:56px;border-radius:12px;
+  background:linear-gradient(135deg,var(--accent-light),var(--purple-light));
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-family:'Sora',sans-serif;
+  font-size:1rem;font-weight:800;color:var(--accent);
+  border:1px solid var(--border);
+}
+.exp-content h3{font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.exp-meta{font-size:0.95rem;color:var(--muted);margin-bottom:1rem}
+.exp-meta strong{color:var(--accent)}
+.exp-content ul{list-style:none;padding:0}
+.exp-content ul li{
+  font-size:0.95rem;color:var(--slate);
+  padding:4px 0 4px 20px;position:relative;line-height:1.7;
+}
+.exp-content ul li::before{content:"→";position:absolute;left:0;color:var(--accent);top:5px}
+
+/* ── CERTIFICATIONS ── */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem}
+.cert-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.5rem;
+  display:flex;align-items:center;gap:1rem;
+  transition:transform .2s,box-shadow .2s;
+}
+.cert-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.07)}
+.cert-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:linear-gradient(135deg,var(--teal-light),var(--accent-light));
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:0.85rem;
+  color:var(--teal);font-weight:800;
+  border:1px solid #99f6e4;
+}
+.cert-name{font-size:1rem;font-weight:600;color:var(--navy);line-height:1.3}
+.cert-org{font-size:0.85rem;color:var(--muted);margin-top:3px}
+
+/* ── CONTACT ── */
+.contact-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.contact-left h2{
+  font-family:'Sora',sans-serif;font-size:1.5rem;
+  font-weight:700;color:var(--navy);margin-bottom:0.5rem;
+}
+.contact-left p{font-size:1rem;color:var(--muted);margin-bottom:1.75rem;line-height:1.75}
+.contact-links{display:flex;flex-direction:column;gap:12px}
+.contact-link{
+  display:flex;align-items:center;gap:14px;
+  text-decoration:none;color:var(--slate);
+  font-size:1rem;font-weight:500;
+  padding:14px 18px;
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  background:var(--white);
+  transition:all .2s;
+}
+.contact-link:hover{border-color:var(--accent);background:var(--accent-light);color:var(--accent);transform:translateX(4px)}
+.contact-icon{
+  width:36px;height:36px;border-radius:8px;
+  background:var(--bg);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.contact-right{
+  background:linear-gradient(135deg,var(--navy) 0%,#1e3a8a 100%);
+  border-radius:var(--r);padding:2.5rem;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.contact-right h2{
+  font-family:'Sora',sans-serif;font-size:1.6rem;
+  font-weight:800;color:#fff;margin-bottom:0.75rem;
+}
+.contact-right p{font-size:1rem;color:#94a3b8;line-height:1.75;margin-bottom:2rem}
+.btn-white{
+  background:#fff;color:var(--navy);
+  border:none;border-radius:var(--rs);
+  padding:14px 32px;font-size:1rem;font-weight:700;
+  cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all .2s;width:fit-content;
+}
+.btn-white:hover{background:var(--accent-light);color:var(--accent);transform:translateY(-2px)}
+
+/* ── FOOTER ── */
+footer{
+  text-align:center;padding:2.5rem 8vw;
+  font-size:0.95rem;color:var(--muted);
+  border-top:1px solid var(--border);
+  background:var(--white);
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .hero{flex-direction:column-reverse;text-align:center;padding:3rem 6vw}
+  .hero-avatar{
+  width:240px;
+  height:240px;
+}
+  .hero-desc{max-width:100%}
+  .hero-btns,.hero-roles{justify-content:center}
+  .hero-stats{justify-content:center}
+  .about-grid,.projects-grid,.contact-wrapper{grid-template-columns:1fr}
+  nav{padding:0 5vw}
+  .nav-links{gap:1rem}
+  section{padding:3rem 6vw}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">M<span>.</span>Shibani</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">Open to Work · CSE Final Year 2025</div>
+    <h1>Hi, I'm <span>M. Shibani</span> 👋</h1>
+    <div class="hero-roles">
+      <span class="role-chip blue">Software Developer</span>
+      <span class="role-chip teal">Full Stack Engineer</span>
+      <span class="role-chip purple">ML Enthusiast</span>
+    </div>
+    <p class="hero-desc">Final-year CSE student at National Engineering College, Kovilpatti. I build intelligent systems — from offline RAG pipelines to full-stack web apps — and I'm passionate about turning ideas into working software.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View My Work →</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">2</span><span class="stat-label">Key Projects</span></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">NPTEL Certs</span></div>
+      <div class="stat"><span class="stat-num">7.71</span><span class="stat-label">CGPA</span></div>
+    </div>
+  </div>
+  <div class="hero-avatar">
+  <img src="images/shibani.jpg" alt="M. Shibani">
+</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About Me</div>
+  <div class="section-title">Who I am</div>
+  <div class="about-grid">
+    <div class="about-intro">
+      I'm a Computer Science Engineering student with hands-on experience in building full-stack web applications and machine learning systems. My most significant project, <strong>NovaRAG</strong>, is an offline multimodal hybrid RAG pipeline that combines dense and sparse retrieval — built from the ground up using Python, FAISS, and local LLMs. I've also gained industry exposure through an ML internship at Prodigy Infotech. I'm a quick learner who enjoys solving real problems, and I'm actively looking for SDE, full-stack, or ML roles to kick off my career.
+    </div>
+    <div class="about-side">
+      <div class="about-card">
+        <h3>🎓 Education</h3>
+        <p><strong>B.E. Computer Science Engineering</strong><br/>National Engineering College, Kovilpatti<br/><span style="color:var(--accent);font-weight:600">CGPA: 7.71</span></p>
+      </div>
+      <div class="about-card">
+        <h3>🌱 Beyond Code</h3>
+        <ul>
+          <li>NSS volunteer — community service</li>
+          <li>Placement trainer for CSE freshers</li>
+          <li>Passionate about ML and NLP</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Technical Skills</div>
+  <div class="section-title">My toolkit</div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Languages</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">C</span>
+        <span class="skill-tag">SQL</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Frontend</div>
+      <div class="skill-tags">
+        <span class="skill-tag">React.js</span>
+        <span class="skill-tag">HTML / CSS</span>
+        <span class="skill-tag">REST APIs</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Backend</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Express.js</span>
+        <span class="skill-tag">FastAPI</span>
+        <span class="skill-tag">JWT / RBAC</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">ML / AI</div>
+      <div class="skill-tags">
+        <span class="skill-tag">RAG</span>
+        <span class="skill-tag">NLP</span>
+        <span class="skill-tag">FAISS</span>
+        <span class="skill-tag">HuggingFace</span>
+        <span class="skill-tag">Ollama</span>
+        <span class="skill-tag">Vector Embeddings</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Databases</div>
+      <div class="skill-tags">
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">Vector DBs</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Tools</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">VS Code</span>
+        <span class="skill-tag">Postman</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <div class="section-title">Things I've built</div>
+  <div class="projects-grid">
+    <div class="project-card featured">
+      <div class="project-badge blue">⭐ Featured · AI / ML</div>
+      <h3>NovaRAG — Offline Multimodal RAG Pipeline</h3>
+      <p>An offline-first, hybrid retrieval-augmented generation pipeline that processes text, images, and documents locally — no cloud dependency. Built to answer complex queries over private data using dense + sparse retrieval.</p>
+      <div class="project-stack">
+        <span class="stack-tag blue">Python</span>
+        <span class="stack-tag blue">FastAPI</span>
+        <span class="stack-tag blue">FAISS</span>
+        <span class="stack-tag blue">BM25</span>
+        <span class="stack-tag blue">HuggingFace</span>
+        <span class="stack-tag blue">Ollama</span>
+      </div>
+      <ul class="project-highlights">
+        <li>Hybrid retrieval: FAISS (dense) + BM25 (sparse) for best-of-both accuracy</li>
+        <li>Fully offline — runs on local LLMs via Ollama, no API keys needed</li>
+        <li>Multimodal support for text and image document chunks</li>
+        <li>REST API via FastAPI for seamless integration</li>
+      </ul>
+    </div>
+    <div class="project-card second">
+      <div class="project-badge teal">Full Stack · Web App</div>
+      <h3>Hostel Gatepass Management System</h3>
+      <p>A full-stack web application for managing student gatepass requests in a hostel, replacing manual paper-based workflows with a secure digital system with role-based access.</p>
+      <div class="project-stack">
+        <span class="stack-tag teal">React.js</span>
+        <span class="stack-tag teal">Node.js</span>
+        <span class="stack-tag teal">Express.js</span>
+        <span class="stack-tag teal">MongoDB</span>
+      </div>
+      <ul class="project-highlights">
+        <li>JWT authentication with RBAC for students, wardens, and admins</li>
+        <li>Real-time gatepass approval and status tracking</li>
+        <li>Dashboard with request history and analytics</li>
+        <li>Secure REST API design with protected endpoints</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <div class="section-title">Where I've worked</div>
+  <div class="exp-card">
+    <div class="exp-logo">PI</div>
+    <div class="exp-content">
+      <h3>Machine Learning Intern</h3>
+      <p class="exp-meta"><strong>Prodigy Infotech</strong> &nbsp;·&nbsp; Internship &nbsp;·&nbsp; 2024</p>
+      <ul>
+        <li>Applied supervised and unsupervised ML algorithms to real-world datasets</li>
+        <li>Built and evaluated predictive models using Python (scikit-learn, pandas, numpy)</li>
+        <li>Worked on data preprocessing, feature engineering, and model optimization</li>
+        <li>Gained hands-on experience with industry ML workflows and best practices</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- CERTIFICATIONS -->
+<section>
+  <div class="section-label">Certifications</div>
+  <div class="section-title">NPTEL &amp; more</div>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <div class="cert-icon">ML</div>
+      <div><div class="cert-name">Machine Learning</div><div class="cert-org">NPTEL · IIT</div></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">IoT</div>
+      <div><div class="cert-name">Internet of Things</div><div class="cert-org">NPTEL · IIT</div></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">CC</div>
+      <div><div class="cert-name">Cloud Computing</div><div class="cert-org">NPTEL · IIT</div></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">LLM</div>
+      <div><div class="cert-name">Large Language Models</div><div class="cert-org">NPTEL · IIT</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">Let's connect</div>
+  <div class="contact-wrapper">
+    <div class="contact-left">
+      <h2>Find me online</h2>
+      <p>I'm open to SDE, full-stack, and ML opportunities. Feel free to reach out on any platform!</p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/shibani-m-804203317/" class="contact-link" target="_blank">
+          <span class="contact-icon">🔗</span>
+          <span>linkedin.com/in/shibani-m</span>
+        </a>
+        <a href="https://github.com/ShibaniPraiseline" class="contact-link" target="_blank">
+          <span class="contact-icon">🐙</span>
+          <span>github.com/ShibaniPraiseline</span>
+        </a>
+        <a href="mailto:shibani.cse.27@gmail.com" class="contact-link">
+          <span class="contact-icon">✉️</span>
+          <span>shibani.cse.27@gmail.com</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-right">
+      <h2>Available for opportunities</h2>
+      <p>Looking for full-time roles in software development, full-stack engineering, or ML. Let's build something great together!</p>
+      <a href="mailto:shibani.cse.27@gmail.com" class="btn-white">
+        ✉️ &nbsp;Send me an email →
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Built by <strong>M. Shibani</strong> &nbsp;·&nbsp; National Engineering College, Kovilpatti &nbsp;·&nbsp; 2025
+</footer>
+
+</body>
+</html>
